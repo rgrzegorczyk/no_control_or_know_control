@@ -25,7 +25,7 @@ accept NEW_USER char default &NEW_USER prompt 'Name of the new UAT schema to re-
 accept UAT_ENV_TNS char default &UAT_ENV_TNS prompt 'Alias of your UAT env      [&UAT_ENV_TNS] :'
 
 --I'm using the same  password for both DEV and ENV
-accept PASSWD CHAR default &PASSWD prompt 'Enter a password for newly created DEV schema in OCI    [&PASSWD]               :' HIDE
+accept PASSWD CHAR default &PASSWD prompt 'Enter a password for newly created UAT schema    [&PASSWD]               :' HIDE
 
 /*drop user if exists */
 DECLARE
@@ -45,24 +45,20 @@ BEGIN
 END;
 /
 
+
 /*create user */
 CREATE user &NEW_USER identified by &PASSWD
 /
+
+--grants and privileges
+--/*OCI
 ALTER USER &NEW_USER DEFAULT TABLESPACE DATA TEMPORARY TABLESPACE TEMP ACCOUNT UNLOCK ;
 ALTER USER &NEW_USER QUOTA UNLIMITED ON DATA;
-/*grants */
---OCI Cloud
 GRANT DWROLE TO &NEW_USER;
+--*/
 
-/*Grant this when on-premise*/
-/*grant connect,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &NEW_USER*/
-
-REM ##########
-REM END preparing UAT environment
-REM ##########
-
---docker
---remove schema name from changesets (standalone LB)
---23cfree
---conn RAFAL/E@localhost:8521/FREEPDB1  //DEV
---conn RAFAL_UAT/E@localhost:8521/FREEPDB1  //UAT
+/*on premise
+ALTER USER &NEW_USER QUOTA UNLIMITED ON USERS;
+grant create session,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &NEW_USER
+/
+*/

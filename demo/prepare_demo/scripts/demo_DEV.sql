@@ -23,7 +23,7 @@ accept NEW_USER char default &NEW_USER prompt 'Name of the new DEV schema to re-
 accept DEV_ENV_TNS char default &DEV_ENV_TNS prompt 'Alias of your DEV env      [&DEV_ENV_TNS] :'
 
 --I'm using the same  password for both DEV and ENV
-accept PASSWD CHAR default &PASSWD prompt 'Enter a password for newly created DEV schema in OCI    [&PASSWD]               :' HIDE
+accept PASSWD CHAR default &PASSWD prompt 'Enter a password for newly created DEV schema    [&PASSWD]               :' HIDE
 
 /*drop user if exists */
 DECLARE
@@ -46,28 +46,21 @@ END;
 /*create user */
 CREATE user &NEW_USER identified by &PASSWD
 /
+
+--grants and privileges
+--/*OCI
 ALTER USER &NEW_USER DEFAULT TABLESPACE DATA TEMPORARY TABLESPACE TEMP ACCOUNT UNLOCK ;
 ALTER USER &NEW_USER QUOTA UNLIMITED ON DATA;
-/*grants */
---OCI Cloud
 GRANT DWROLE TO &NEW_USER;
+--*/
 
-/*Grant this when on-premise*/
-/*grant connect,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &NEW_USER*/
+/*on premise
+ALTER USER &NEW_USER QUOTA UNLIMITED ON USERS;
+grant create session,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &NEW_USER
+/
+*/
 
 /*Connect to newly created schema*/
 conn &NEW_USER/&PASSWD@&DEV_ENV_TNS
-
 /*Create demo objects*/
 @@sql/objects/create_objects.sql;
-
-REM ##########
-REM END of preparing DEV environment
-REM ##########
-
-
---docker
---remove schema name from changesets (standalone LB)
---23cfree
---conn RAFAL/E@localhost:8521/FREEPDB1  //DEV
---conn RAFAL_UAT/E@localhost:8521/FREEPDB1  //UAT
