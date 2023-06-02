@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+############ 2023.06.02.10.13.33 #################################
+############ ddl.parms  ########################################
+BODY                           : ON
+COLLATION_CLAUSE               : NEVER
+CONSTRAINTS                    : ON
+CONSTRAINTS_AS_ALTER           : ON
+EMIT_SCHEMA                    : ON
+FORCE                          : ON
+INHERIT                        : ON
+INSERT                         : ON
+OID                            : ON
+PARTITIONING                   : ON
+PRETTY                         : ON
+REF_CONSTRAINTS                : ON
+SEGMENT_ATTRIBUTES             : ON
+SIZE_BYTE_KEYWORD              : ON
+SPECIFICATION                  : ON
+SQLTERMINATOR                  : ON
+STORAGE                        : ON
+TABLESPACE                     : ON
+
+############ lb.parameters ########################################
+basecommand                    : liquibase
+command                        : generate-schema
+database-changelog-table-name  : DATABASECHANGELOG
+fail-on-error                  : false
+grants                         : false
+log                            : false
+replace                        : true
+runalways                      : false
+runonchange                    : true
+split                          : true
+sqlclversion                   : 23.1.0.0
+synonyms                       : false
+############ End Parameters #######################################
+-->
+<databaseChangeLog 
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <include file="sequence/departments_seq_sequence.xml"/> 
+  <include file="table/regions_table.xml"/> 
+  <include file="table/departments_table.xml"/> 
+  <include file="table/application_params_table.xml"/> 
+  <include file="procedure/secure_dml_procedure.xml"/> 
+  <include file="table/countries_table.xml"/> 
+  <include file="view/emp_details_view_view.xml"/> 
+  <include file="trigger/secure_countries_trigger.xml"/> 
+  <include file="trigger/secure_regions_trigger.xml"/> 
+  <include file="comment/regions_comments.xml"/> 
+  <include file="comment/countries_comments.xml"/> 
+</databaseChangeLog> 
