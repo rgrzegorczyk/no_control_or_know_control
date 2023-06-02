@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset rafal:secure_dml_procedure runOnChange:true endDelimiter:\n/ context:INITIAL_SYNC labels:INITIAL_SYNC
+--comment Initial changeset for secure_dml_procedure
 
   CREATE OR REPLACE EDITIONABLE PROCEDURE "RAFAL"."SECURE_DML" 
 is
@@ -9,3 +12,4 @@ begin
                               'You may only make changes during normal office hours');
    end if;
 end secure_dml;
+

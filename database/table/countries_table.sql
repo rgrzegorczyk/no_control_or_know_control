@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset rafal:countries_table runOnChange:false context:INITIAL_SYNC labels:INITIAL_SYNC
+--comment Initial changeset for countries_table
   CREATE TABLE "RAFAL"."COUNTRIES" 
    (	"COUNTRY_ID" CHAR(2) CONSTRAINT "COUNTRY_ID_NN" NOT NULL ENABLE,
 	"COUNTRY_NAME" VARCHAR2(40),

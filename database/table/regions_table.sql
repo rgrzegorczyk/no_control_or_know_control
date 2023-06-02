@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset rafal:regions_table runOnChange:false context:INITIAL_SYNC labels:INITIAL_SYNC
+--comment Initial changeset for regions_table
   CREATE TABLE "RAFAL"."REGIONS" 
    (	"REGION_ID" NUMBER CONSTRAINT "REGION_ID_NN" NOT NULL ENABLE,
 	"REGION_NAME" VARCHAR2(25),

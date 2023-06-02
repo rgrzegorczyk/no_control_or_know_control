@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset rafal:locations_table runOnChange:false context:INITIAL_SYNC labels:INITIAL_SYNC
+--comment Initial changeset for locations_table
   CREATE TABLE "RAFAL"."LOCATIONS" 
    (	"LOCATION_ID" NUMBER(4,0),
 	"STREET_ADDRESS" VARCHAR2(40 CHAR),

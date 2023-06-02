@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset rafal:departments_table runOnChange:false context:INITIAL_SYNC labels:INITIAL_SYNC
+--comment Initial changeset for departments_table
   CREATE TABLE "RAFAL"."DEPARTMENTS" 
    (	"DEPARTMENT_ID" NUMBER(4,0),
 	"DEPARTMENT_NAME" VARCHAR2(30) CONSTRAINT "DEPT_NAME_NN" NOT NULL ENABLE,

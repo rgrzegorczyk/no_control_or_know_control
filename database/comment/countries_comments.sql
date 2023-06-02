@@ -1,3 +1,6 @@
+--liquibase formatted sql
+--changeset rafal:countries_comments runOnChange:false context:INITIAL_SYNC labels:INITIAL_SYNC
+--comment Initial changeset for countries_comments
 
    COMMENT ON COLUMN "RAFAL"."COUNTRIES"."COUNTRY_ID" IS 'Primary key of countries table.';
    COMMENT ON COLUMN "RAFAL"."COUNTRIES"."COUNTRY_NAME" IS 'Country name';
