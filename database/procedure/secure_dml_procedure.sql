@@ -1,6 +1,6 @@
 --liquibase formatted sql
---changeset rafal:secure_dml_procedure runOnChange:true endDelimiter:\n/ context:INITIAL_SYNC labels:INITIAL_SYNC
---comment Initial changeset for secure_dml_procedure
+--changeset rafal:secure_dml_procedure runOnChange:true endDelimiter:\n/ context:v1 labels:task-2
+--comment Modified error message
 
   CREATE OR REPLACE EDITIONABLE PROCEDURE "RAFAL"."SECURE_DML" 
 is
@@ -9,7 +9,7 @@ begin
       or TO_CHAR(SYSDATE, 'DY') in ('SAT', 'SUN')
    then
       RAISE_APPLICATION_ERROR(-20205,
-                              'You may only make changes during normal office hours');
+                              'ERROR.You may only make changes during normal office hours');
    end if;
 end secure_dml;
 

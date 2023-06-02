@@ -7,3 +7,7 @@
    ) SEGMENT CREATION DEFERRED
   PCTFREE 10 PCTUSED 40 INITRANS 10 NOCOMPRESS LOGGING
   TABLESPACE "DATA"
+
+--changeset rafal:application_params_table_add_col runOnChange:false context:v1 labels:task-1
+--comment Add new column DESCRIPTION
+ALTER TABLE RAFAL.APPLICATION_PARAMS ADD DESCRIPTION VARCHAR2(500);
