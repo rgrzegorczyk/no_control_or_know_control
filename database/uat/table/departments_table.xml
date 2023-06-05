@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+	http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+	<changeSet id="4c0ab40b2d8b024c38c00f89cfa3ec6083c7bf07" author="(RAFAL)-Generated" failOnError="false"   runOnChange="true" runAlways="false"  >
+		<n0:createSxmlObject objectName="DEPARTMENTS" objectType="TABLE" ownerName="RAFAL"  replaceIfExists="true" >
+			<n0:source><![CDATA[
+  <TABLE xmlns="http://xmlns.oracle.com/ku" version="1.0">
+   <SCHEMA>RAFAL</SCHEMA>
+   <NAME>DEPARTMENTS</NAME>
+   <RELATIONAL_TABLE>
+      <COL_LIST>
+         <COL_LIST_ITEM>
+            <NAME>DEPARTMENT_ID</NAME>
+            <DATATYPE>NUMBER</DATATYPE>
+            <PRECISION>4</PRECISION>
+            <SCALE>0</SCALE>
+         </COL_LIST_ITEM>
+         <COL_LIST_ITEM>
+            <NAME>DEPARTMENT_NAME</NAME>
+            <DATATYPE>VARCHAR2</DATATYPE>
+            <LENGTH>60</LENGTH>
+            <CHAR_SEMANTICS></CHAR_SEMANTICS>
+            <COLLATE_NAME>USING_NLS_COMP</COLLATE_NAME>
+            <NOT_NULL>
+               <NAME>DEPT_NAME_NN</NAME>
+            </NOT_NULL>
+         </COL_LIST_ITEM>
+         <COL_LIST_ITEM>
+            <NAME>MANAGER_ID</NAME>
+            <DATATYPE>NUMBER</DATATYPE>
+            <PRECISION>6</PRECISION>
+            <SCALE>0</SCALE>
+         </COL_LIST_ITEM>
+         <COL_LIST_ITEM>
+            <NAME>LOCATION_ID</NAME>
+            <DATATYPE>NUMBER</DATATYPE>
+            <PRECISION>4</PRECISION>
+            <SCALE>0</SCALE>
+         </COL_LIST_ITEM>
+      </COL_LIST>
+      <DEFAULT_COLLATION>USING_NLS_COMP</DEFAULT_COLLATION>
+      <PHYSICAL_PROPERTIES>
+         <HEAP_TABLE>
+            <SEGMENT_ATTRIBUTES>
+               <SEGMENT_CREATION_DEFERRED></SEGMENT_CREATION_DEFERRED>
+               <PCTFREE>10</PCTFREE>
+               <PCTUSED>40</PCTUSED>
+               <INITRANS>10</INITRANS>
+               <MAXTRANS>255</MAXTRANS>
+               <TABLESPACE>DATA</TABLESPACE>
+               <LOGGING>Y</LOGGING>
+            </SEGMENT_ATTRIBUTES>
+            <COMPRESS>N</COMPRESS>
+         </HEAP_TABLE>
+      </PHYSICAL_PROPERTIES>
+   </RELATIONAL_TABLE>
+</TABLE>]]></n0:source>
+		</n0:createSxmlObject>
+	</changeSet>
+</databaseChangeLog>

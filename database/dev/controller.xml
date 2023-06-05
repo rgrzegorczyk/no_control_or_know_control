@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-############ 2023.06.02.10.27.13 #################################
+############ 2023.06.05.09.19.41 #################################
 ############ ddl.parms  ########################################
 BODY                           : ON
 COLLATION_CLAUSE               : NEVER
@@ -42,16 +42,15 @@ synonyms                       : false
         xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-  <include file="sequence/departments_seq_sequence.sql"/> 
-  <include file="table/regions_table.sql"/> 
-  <include file="table/departments_table.sql"/> 
-  <include file="table/application_params_table.sql"/> 
-  <include file="procedure/secure_dml_procedure.sql"/> 
-  <include file="table/countries_table.sql"/> 
-  <include file="table/locations_table.sql"/> 
-  <include file="view/emp_details_view_view.sql"/> 
-  <include file="trigger/secure_countries_trigger.sql"/> 
-  <include file="trigger/secure_regions_trigger.sql"/> 
-  <include file="comment/regions_comments.sql"/> 
-  <include file="comment/countries_comments.sql"/> 
+  <include file="sequence/departments_seq_sequence.xml"/> 
+  <include file="table/regions_table.xml"/> 
+  <include file="table/departments_table.xml"/> 
+  <include file="table/application_params_table.xml"/> 
+  <include file="procedure/secure_dml_procedure.xml"/> 
+  <include file="table/countries_table.xml"/> 
+  <include file="view/emp_details_view_view.xml"/> 
+  <include file="trigger/secure_countries_trigger.xml"/> 
+  <include file="trigger/secure_regions_trigger.xml"/> 
+  <include file="comment/regions_comments.xml"/> 
+  <include file="comment/countries_comments.xml"/> 
 </databaseChangeLog> 
