@@ -1,3 +1,6 @@
 presentation/demo_checklist/*
 presentation/demo_results/*
 DEV_preview.sql
+UAT_preview.sql
+preview.sql
+$priv/*

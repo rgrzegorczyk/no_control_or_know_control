@@ -69,5 +69,5 @@ grant create session,create view, create job, create table, create sequence, cre
 
 /*If you want objects on UAT prepared earlier then uncomment below line */
 /*Connect to newly created schema*/
-conn &NEW_USER/&PASSWD@&UAT_ENV_TNS
-@@sql/objects/create_objects.sql;
+--conn &NEW_USER/&PASSWD@&UAT_ENV_TNS
+--@@sql/objects/create_objects.sql;
