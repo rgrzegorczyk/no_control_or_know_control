@@ -58,11 +58,11 @@ ALTER USER &NEW_USER QUOTA UNLIMITED ON DATA;
 GRANT DWROLE TO &NEW_USER;
 --*/
 
-/*on premise
+/*on premise*/
+--it will fail when executed on OCI, ignore it
 ALTER USER &NEW_USER QUOTA UNLIMITED ON USERS;
 grant create session,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &NEW_USER
 /
-*/
 
 --no need to create objects on UAT
 --it will be created later using Liquibase
